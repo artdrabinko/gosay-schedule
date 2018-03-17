@@ -1,0 +1,35 @@
+.settings_title {
+   display: inline-block;
+}
+
+h5.list-group-item {
+   background-color: #f3f5f8;
+}
+
+span.select-item {
+   color: #24292e;
+   font-weight: 600;
+   border-left: 3px solid #e36209;
+}
+
+span.list-group-item:hover {
+    cursor: pointer;
+    background-color:  #f3f5ff;
+}
+
+span.select-item:hover {
+   cursor: default;
+   background-color: #fff;
+}
+
+
+
+
+
+
+
+
+
+.hide {
+   display: none;
+}
