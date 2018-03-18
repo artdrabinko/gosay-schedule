@@ -28,7 +28,14 @@ span.select-item:hover {
 
 
 
-
+.about-box {
+   border: 1px solid #ddd;
+   border-radius: 5px;
+   background-color: #fff;
+   color: #24292e;
+   font-weight: 600;
+   padding: 5px;
+}
 
 .hide {
    display: none;

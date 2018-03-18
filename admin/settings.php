@@ -119,7 +119,26 @@ $groups =  R::findAll('groups', 'ORDER BY group_name');
 
 
           <div id="setting_menu_3" class="hide">
+             <div id="setting_menu_3_about_group" class="col-md-6 pl-0 hide">
+                <label>
+                   <b>Информация о группе:</b>
+                </label>
+                <div class="about-box">
+                   <label id="setting_menu_3_about_name" class="ml-2"></label><br />
+                   <label id="setting_menu_3_about_staff" class="ml-2"></label><br />
+                   <label id="setting_menu_3_about_subscribers" class="ml-2"></label><br />
+                   <label id="setting_menu_3_about_lessons" class="ml-2"></label>
+               </div>
+             </div>
              <form method="POST" id="form_menu_3" action="javascript:void(null);" onsubmit="processing_form(3)">
+
+               <div id="setting_menu_3_confirm" class="form-row col-md-6 p-1 hide">
+                  <label><b>Введите пароль</b></label>
+                  <input id="in_password_menu_3" type="password" name="password" class="form-control" maxlength="20" >
+                  <div class="invalid-feedback">
+                    Неверный пароль!
+                  </div>
+               </div>
                <label for="exampleInputEmail1"><b>Введите название группы</b></label>
                <div class="form-row col-md-6 p-0">
                 <div class="form-group col-md-6">
@@ -131,34 +150,117 @@ $groups =  R::findAll('groups', 'ORDER BY group_name');
                     Группа не существует!
                  </div>
                 </div>
+
                 <div class="form-group col-md-6">
-                  <button id="btn_form_menu_3" class=" col-md-12 btn btn-danger" type="submit" name="btn-form-menu_3" >
+                  <button id="btn_form_menu_3" class=" col-md-12 btn btn-danger" type="submit" name="btn-form-menu_3" disabled>
                     Удалить группу
+                 </button>
+                </div>
+               </div>
+
+            </form>
+          </div>
+
+
+          <div id="setting_menu__" class="hide">
+             <form method="POST" id="form_menu_4" action="javascript:void(null);" onsubmit="processing_form(4)">
+               <label for="exampleInputEmail1"><b>Введите email</b></label>
+               <div class="form-row col-md-6 p-0">
+                <div class="form-group col-md-6">
+                  <input id="in_group_name_menu_4" type="text" name="email" class="form-control" placeholder="ivanov@gmail.com"  maxlength="25" >
+                  <div class="valid-feedback">
+                    Email свободен!
+                  </div>
+                  <div class="invalid-feedback">
+                    Пользователь с таким email уже существует!
+                 </div>
+                </div>
+                <div class="form-group col-md-6">
+                  <button id="btn_form_menu_4" class=" col-md-12 btn btn-info" type="submit" name="btn-form-menu_4" disabled>
+                    Добавить группу
                  </button>
                 </div>
                </div>
             </form>
           </div>
 
+
+          <div id="setting_menu_5" class="hide">
+             <div id="setting_menu_5_about_user" class=" col-md-6 pl-0 hide">
+                <label>
+                   <b>Информация о пользователе:</b>
+                </label>
+                <div class="about-box">
+                   <label id="setting_menu_5_about_login" class="ml-2"></label><br />
+                   <label id="setting_menu_5_about_email" class="ml-2"></label><br />
+                   <label id="setting_menu_5_about_level" class="ml-2"></label><br />
+                   <label id="setting_menu_5_about_relation" class="ml-2"></label>
+               </div>
+             </div>
+             <form method="POST" id="form_menu_5" action="javascript:void(null);" onsubmit="processing_form(5)">
+
+               <div id="setting_menu_5_confirm" class="form-group col-md-6 pl-0 hide">
+                  <label><b>Введите пароль</b></label>
+                  <input id="in_password_menu_5" type="password" name="password" class="form-control" maxlength="30" >
+                  <div class="invalid-feedback">
+                    Неверный пароль!
+                  </div>
+               </div>
+               <label ><b>Введите email или логин пользователя</b></label>
+
+                   <div class="form-group col-md-6 pl-0">
+                      <input id="in_login_menu_5" type="text" name="login" class="form-control" placeholder="ivanov@gmail.com"  maxlength="30" >
+                      <div class="valid-feedback">
+                        Пользователь найден!
+                      </div>
+                      <div class="invalid-feedback">
+                        Пользователь не существует!
+                      </div>
+                   </div>
+
+                   <div class="form-row col-md-6 pl-1">
+                     <button id="btn_form_menu_5" class="btn btn-danger" type="submit" name="btn-form-menu_5" disabled>
+                       Удалить пользователя
+                    </button>
+                   </div>
+
+
+            </form>
+          </div>
+
+
+
+
+
+
           <div id="setting_menu_6" class="hide">
              <form method="POST" id="form_menu_6" action="javascript:void(null);" onsubmit="processing_form(6)">
               <div class="form-group col-md-6 pl-0">
                  <label for="exampleInputEmail1"><b>Старый пароль</b></label>
-                 <input type="password" name="old_password" class="form-control" >
+                 <input id="in_old_password_menu_6" type="password" name="old_password" class="form-control" >
+                 <div class="invalid-feedback">
+                   Неверный пароль!
+                 </div>
               </div>
 
               <div class="form-group col-md-6 pl-0">
                 <label for="exampleInputPassword1"><b>Новый пароль</b></label>
-                <input type="password" name="new_password" class="form-control" >
+                <input id="in_new_password_menu_6" type="password" name="new_password" class="form-control" >
+                <div class="invalid-feedback">
+                  Пароли не совпали либо слишко простые!
+                </div>
               </div>
 
               <div class="form-group col-md-6 pl-0">
                 <label for="exampleInputPassword1"><b>Повторите новый пароль</b></label>
-                <input type="password" name="confirm_password" class="form-control" >
+                <input id="in_confirm_password_menu_6" type="password" name="confirm_password" class="form-control" >
+                <div class="invalid-feedback">
+                  Пароли не совпали либо слишко простые!
+                </div>
               </div>
 
               <div class="form-group col-md-6 pl-0">
-                   <button id="btn_form_menu_6" type="submit" name="btn-form-menu_6" class="btn btn-info">
+                   <button id="btn_form_menu_6" type="submit" name="btn-form-menu_6" class="btn btn-info" disabled>
                      Обновить пароль
                   </button>
                   <label class="ml-3" tyle="font-size: 15px;"><a href="admin.php?forgot_password=forgot" alt="/admin">Забыли пароль?</a></label>
@@ -368,23 +470,3 @@ $groups =  R::findAll('groups', 'ORDER BY group_name');
 
  </body>
  </html>
-
- <!--
- /*
- GoSay Schedule is a web application for scheduling in educational institutions.
- Copyright (C) 2018  Drabinko Artur
-
- This program is free software: you can redistribute it and/or modify
- it under the terms of the GNU Affero General Public License as
- published by the Free Software Foundation, either version 3 of the
- License, or (at your option) any later version.
-
- This program is distributed in the hope that it will be useful,
- but WITHOUT ANY WARRANTY; without even the implied warranty of
- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- GNU Affero General Public License for more details.
-
- You should have received a copy of the GNU Affero General Public License
- along with this program.  If not, see <https://www.gnu.org/licenses/>
- */
--->
